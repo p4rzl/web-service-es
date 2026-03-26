@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #050505;
+    --bg-soft: rgba(255, 255, 255, 0.04);
+    --card: rgba(10, 10, 10, 0.88);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #f5f5f5;
+    --muted: #a1a1aa;
+    --accent: #ffffff;
+    --accent-soft: rgba(255, 255, 255, 0.1);
+    --shadow: 0 20px 80px rgba(0, 0, 0, 0.55);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.04), transparent 25%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+}
+
+.card {
+    width: 100%;
+    max-width: 620px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 48px 36px;
+    text-align: center;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bg-soft);
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    max-width: 480px;
+    margin: 0 auto 34px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    min-width: 210px;
+    padding: 15px 22px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border 0.25s ease;
+    border: 1px solid var(--border);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #050505;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12);
+}
+
+.btn-primary:hover {
+    background: #eaeaea;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.background-glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(90px);
+    opacity: 0.22;
+    z-index: 1;
+}
+
+.glow-1 {
+    width: 260px;
+    height: 260px;
+    background: #ffffff;
+    top: 10%;
+    left: 12%;
+}
+
+.glow-2 {
+    width: 220px;
+    height: 220px;
+    background: #7c7c7c;
+    bottom: 12%;
+    right: 10%;
+}
+
+@media (max-width: 640px) {
+    .card {
+        padding: 34px 22px;
+        border-radius: 22px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: unset;
+    }
+}
